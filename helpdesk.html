@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="CWA Help Desk Appointment Booking System">
+  <meta name="keywords" content="CWA, Help Desk, Appointment, Booking">
+  <meta name="author" content="Your Name">
+  <title>CWA Help Desk Appointment</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="http://www.swin.edu.au" class="logo">
+       <img src="logo.png" alt="Swinburne University Logo" width="200">
+      </a>
+      <h1>CWA Help Desk Appointment</h1>
+      <div class="info-box">
+        <p>The Help Desk is located in ATC620. Open 10:30 to 19:00 Monday to Friday</p>
+        <p>Check Blackboard for when CWA tutors will be there.</p>
+      </div>
+    </header>
+    <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+      <!-- Student Details -->
+      <fieldset>
+        <legend>Student details</legend>
+        <div class="form-group">
+          <label for="studentID">Student ID<span class="required"></span></label>
+          <input type="text" id="studentID" name="studentID" required pattern="[0-9]{7,10}" 
+                 title="Between 7 and 10 digits">
+        </div>
+        
+        <div class="form-group">
+          <label for="givenName">Given Name<span class="required"></span></label>
+          <input type="text" id="givenName" name="givenName" required pattern="[A-Za-z ]+" 
+                 maxlength="15" title="Alphabetical characters only, maximum 15">
+        </div>
+        
+        <div class="form-group">
+          <label for="familyName">Family Name<span class="required"></span></label>
+          <input type="text" id="familyName" name="familyName" required pattern="[A-Za-z ]+" 
+                 maxlength="15" title="Alphabetical characters only, maximum 15">
+        </div>
+      </fieldset>
+      <!-- Your Unit -->
+      <fieldset>
+        <legend>Your unit<span class="required"></span></legend>
+        <div class="radio-group">
+          <label for="unitCOS10011">
+            <input type="radio" id="unitCOS10011" name="unit" value="COS10011" required="required">
+            COS10011
+          </label>
+          <label for="unitCOS60004">
+            <input type="radio" id="unitCOS60004" name="unit" value="COS60004">
+            COS60004
+          </label>
+          <label for="unitCOS60007">
+            <input type="radio" id="unitCOS60007" name="unit" value="COS60007">
+            COS60007
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Your Tutor -->
+      <fieldset>
+        <legend>Your Tutor<span class="required"></span></legend>
+        <div class="form-group">
+          <select id="tutor" name="tutor" required>
+            <option value="">Please Select</option>
+            <option value="Mr. Thomash">Mr. Thomas</option>
+            <option value="Prof. Johnson">Prof. Johnson</option>
+            <option value="Ms. Williams">Ms. Williams</option>
+            <option value="Mr. Charlie">Mr. Charlie</option>
+            <option value="Mr. David">Mr. David</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <!-- Issue -->
+      <fieldset>
+        <legend>Issue</legend>
+        <div class="checkbox-group">
+          <label for="issueHTML">
+            <input type="checkbox" id="issueHTML" name="issue[]" value="HTML">
+            HTML
+          </label>
+          <label for="issueCSS">
+            <input type="checkbox" id="issueCSS" name="issue[]" value="CSS">
+            CSS
+          </label>
+          <label for="issueJS">
+            <input type="checkbox" id="issueJS" name="issue[]" value="JavaScript">
+            JavaScript
+          </label>
+          <label for="issuePHP">
+            <input type="checkbox" id="issuePHP" name="issue[]" value="PHP" checked="checked">
+            PHP
+          </label>
+          <label for="issueMySQL">
+            <input type="checkbox" id="issueMySQL" name="issue[]" value="MySQL">
+            MySQL
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Description of Issue -->
+      <fieldset>
+        <legend>Description of Issue</legend>
+        <div class="form-group">
+          <textarea id="description" name="description" 
+                    placeholder="Write description of your problem here..."></textarea>
+        </div>
+      </fieldset>
+
+      <!-- Preferred Date/Time -->
+      <fieldset>
+        <legend>Preferred Date / Time</legend>
+        <div class="date-time-container">
+          <div class="form-group">
+            <div class="instruction">Date: <input type="text" placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}"></div>
+          </div>
+          <div class="form-group">
+            <div class="instruction">Time: <input type="text" placeholder="00:00" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"></div>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <button type="submit" class="submit-btn">Book Appointment</button>
+        <button type="reset" class="reset-btn">Reset Form</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
